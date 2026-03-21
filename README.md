@@ -30,6 +30,7 @@ Recreate a provided webpage using only HTML, with focus on semantic structure, r
 
 - I decided against using `footer`, as the final photo block is still part of the main page content, not closing or supplementary page information.
 - I chose not to use `figure` for the images because the default browser margins changed the layout and made it less faithful to the reference screenshot, as we cannot use CSS in this exercise.
+- Considered adding `id` attributes (e.g., for the total in the expenses table) to support potential future scripting, but omitted them to keep the markup minimal and aligned with the current project scope.
 
 ## Reference Screenshot
 
