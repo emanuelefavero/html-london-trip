@@ -26,6 +26,11 @@ Recreate a provided webpage using only HTML, with focus on semantic structure, r
 - proper use of lists, tables, images, and text elements
 - simple accessible markup with logical reading order
 
+## Notes
+
+- I decided against using `footer`, as the final photo block is still part of the main page content, not closing or supplementary page information.
+- I choose not to use `figure` for the split panoramic images because the default browser margins changed the layout and made it less faithful to the reference screenshot.
+
 ## Reference Screenshot
 
 ![Source layout for the exercise](./assets/source-layout.jpg)
