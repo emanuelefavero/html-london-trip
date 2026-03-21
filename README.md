@@ -29,7 +29,7 @@ Recreate a provided webpage using only HTML, with focus on semantic structure, r
 ## Notes
 
 - I decided against using `footer`, as the final photo block is still part of the main page content, not closing or supplementary page information.
-- I choose not to use `figure` for the split panoramic images because the default browser margins changed the layout and made it less faithful to the reference screenshot.
+- I chose not to use `figure` for the images because the default browser margins changed the layout and made it less faithful to the reference screenshot, as we cannot use CSS in this exercise.
 
 ## Reference Screenshot
 
