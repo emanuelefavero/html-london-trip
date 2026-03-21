@@ -18,6 +18,7 @@ Recreate a provided webpage using only HTML, with focus on semantic structure, r
 ## Project Structure
 
 ```text
+├── .prettierrc
 ├── index.html
 ├── README.md
 ├── assets/
