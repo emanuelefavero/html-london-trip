@@ -2,6 +2,8 @@
 
 Semantic HTML exercise for a Web Development course.
 
+> Note: See the [Notes](#notes) section in this README for some of the decisions I made while writing the HTML markup, and the reasoning behind them.
+
 ## Goal
 
 Recreate a provided webpage using only HTML, with focus on semantic structure, readable markup, and accessibility fundamentals.
