@@ -50,3 +50,11 @@ Recreate a provided webpage using only HTML, with focus on semantic structure, r
 ## Reference Screenshot
 
 ![Source layout for the exercise](./assets/source-layout.jpg)
+
+&nbsp;
+
+---
+
+&nbsp;
+
+[**Go To Top &nbsp; ⬆️**](#html-london-trip)
