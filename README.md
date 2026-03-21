@@ -13,11 +13,26 @@ Recreate a provided webpage using only HTML, with focus on semantic structure, r
 - No JavaScript
 - No frameworks or dependencies
 
-## Project Files
+## Project Structure
 
-- [index.html](/Users/emanuelefavero/code/boolean/html-london-trip/index.html): final page
-- [assets/source-layout.jpg](/Users/emanuelefavero/code/boolean/html-london-trip/assets/source-layout.jpg): original reference screenshot
-- [assets/WEB-IMAGES.md](/Users/emanuelefavero/code/boolean/html-london-trip/assets/WEB-IMAGES.md): source links for external images
+```text
+├── index.html
+├── README.md
+├── assets/
+│   ├── source-layout.jpg
+│   └── WEB-IMAGES.md
+└── img/
+    ├── pexels-bill-emrich-230794-0.jpg
+    ├── pexels-bill-emrich-230794-1.jpg
+    └── pexels-bill-emrich-230794-2.jpg
+```
+
+- `index.html`: The main HTML file containing the webpage markup.
+- `README.md`: This file, providing an overview of the project, goals, constraints, and notes.
+- `assets/`: Contains the reference screenshot and a markdown file listing the web images used in the project.
+- `img/`: Contains the local images used in the webpage.
+
+> Note: I have also added a `.prettierrc` with my preferred formatting settings to ensure consistent indentation and readability in the `index.html` file.
 
 ## What This Project Shows
 
