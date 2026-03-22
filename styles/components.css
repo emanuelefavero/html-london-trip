@@ -1,0 +1,46 @@
+.inline-form {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.4rem;
+  grid-template-columns: minmax(0, 1.7fr) minmax(10rem, 0.9fr) auto;
+  align-items: end;
+
+  @media (max-width: 540px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.expenses__remove,
+.todo-item__remove,
+.trip-photo-card__remove {
+  min-height: auto;
+  padding: 0.55rem 0.8rem;
+  background: var(--transparent);
+  color: var(--foreground);
+  border: 1px solid var(--accent-border);
+  box-shadow: none;
+
+  &:hover,
+  &:focus-visible {
+    box-shadow: none;
+    background: var(--secondary);
+  }
+}
+
+.trip-photo-card {
+  display: grid;
+  gap: 0.75rem;
+  align-content: start;
+
+  img {
+    width: 100%;
+    min-height: 11rem;
+    height: clamp(11rem, 24vw, 15rem);
+    object-fit: cover;
+  }
+}

@@ -1,0 +1,95 @@
+body {
+  min-height: 100vh;
+  position: relative;
+  font-family: var(--font);
+  color: var(--foreground);
+  background: var(--background);
+  line-height: 1.6;
+
+  @media (max-width: 400px) {
+    font-size: 0.938rem;
+  }
+}
+
+h1,
+h2 {
+  font-family: var(--display-font);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+h1 {
+  max-width: 12ch;
+  font-size: clamp(2.4rem, 5.6vw, 3rem);
+}
+
+h2 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin-bottom: 1.5rem;
+}
+
+label {
+  font-size: 0.95rem;
+  color: var(--muted-foreground);
+}
+
+input {
+  font: inherit;
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.8rem 0.95rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--foreground);
+  transition:
+    border-color 140ms ease,
+    box-shadow 140ms ease,
+    background-color 140ms ease,
+    transform 140ms ease;
+
+  &::placeholder {
+    color: var(--muted-foreground);
+  }
+
+  &:hover {
+    border-color: var(--border-strong);
+  }
+
+  &:focus {
+    outline: 0;
+    border-color: var(--ring);
+    box-shadow: 0 0 0 4px var(--ring-shadow);
+  }
+}
+
+button {
+  cursor: pointer;
+  font: inherit;
+  min-height: 3rem;
+  padding: 0.8rem 1.2rem;
+  border: 0;
+  border-radius: 999px;
+  color: var(--primary-foreground);
+  background: var(--primary);
+  box-shadow: var(--primary-shadow);
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    background-color 160ms ease,
+    filter 160ms ease;
+
+  &:hover,
+  &:focus-visible {
+    transform: translateY(-1px);
+    box-shadow: var(--primary-shadow-hover);
+    background: var(--primary-hover);
+    filter: saturate(1.03);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--ring-offset);
+    outline-offset: 2px;
+  }
+}

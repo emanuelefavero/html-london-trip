@@ -1,0 +1,60 @@
+header {
+  width: var(--content-width);
+  margin-inline: auto;
+  padding: clamp(2rem, 6vw, 3.5rem) 0 1rem;
+
+  @media (max-width: 540px) {
+    width: 100%;
+    padding-inline: 1rem;
+  }
+}
+
+main {
+  width: var(--content-width);
+  margin-inline: auto;
+  display: grid;
+  gap: var(--section-gap);
+  padding-bottom: 4rem;
+
+  @media (max-width: 540px) {
+    width: 100%;
+  }
+
+  > section {
+    min-width: 0;
+  }
+}
+
+.panorama,
+.expenses,
+.todo,
+.info,
+.trip-photos {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background: var(--section);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+
+  @media (max-width: 540px) {
+    width: var(--content-width);
+    margin-inline: auto;
+  }
+
+  @media (max-width: 400px) {
+    padding: 1rem;
+  }
+}
+
+hr {
+  width: min(9rem, 24vw);
+  height: 1px;
+  margin: -0.25rem auto;
+  border: 0;
+  background: linear-gradient(
+    90deg,
+    var(--transparent) 0%,
+    var(--border-strong) 50%,
+    var(--transparent) 100%
+  );
+}
