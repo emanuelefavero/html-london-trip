@@ -9,6 +9,8 @@
       content="Pagina HTML semantica che descrive un viaggio a Londra, con immagini panoramiche, spese di viaggio e informazioni utili."
     />
     <meta name="author" content="Emanuele Favero" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./js/app.js"></script>
   </head>
   <body>
     <!-- Page header -->
@@ -19,17 +21,11 @@
     <main>
       <!-- Introductory panoramic images -->
       <section aria-label="Panoramica di Londra" class="panorama">
-        <img
-          src="img/pexels-bill-emrich-230794-0.jpg"
-          alt="Panoramica di Londra sinistra"
-        />
-        <img
-          src="img/pexels-bill-emrich-230794-1.jpg"
-          alt="Panoramica di Londra centrale"
-        />
+        <img src="img/pexels-bill-emrich-230794-0.jpg" alt="" />
+        <img src="img/pexels-bill-emrich-230794-1.jpg" alt="" />
         <img
           src="img/pexels-bill-emrich-230794-2.jpg"
-          alt="Panoramica di Londra destra"
+          alt="Vista panoramica dello skyline di Londra"
         />
       </section>
 
@@ -39,38 +35,75 @@
       <section class="expenses">
         <h2>Le mie spese</h2>
 
-        <table>
-          <thead>
-            <tr>
-              <th>Numero</th>
-              <th>Descrizione</th>
-              <th>Costo</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Biglietto aereo</td>
-              <td>150€</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Hotel</td>
-              <td>250€</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Metro</td>
-              <td>100€</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td colspan="2">Totale</td>
-              <td>500€</td>
-            </tr>
-          </tfoot>
-        </table>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Numero</th>
+                <th>Descrizione</th>
+                <th>Costo</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="expenses-body">
+              <tr>
+                <td>1</td>
+                <td>Biglietto aereo</td>
+                <td>150€</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Hotel</td>
+                <td>250€</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Metro</td>
+                <td>100€</td>
+                <td></td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td id="expenses-total-label">Totale</td>
+                <td></td>
+                <td id="expenses-total" aria-live="polite">500€</td>
+                <td></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+
+        <form class="inline-form" id="expense-form">
+          <div class="field">
+            <label for="expense-description">Descrizione</label>
+            <input
+              id="expense-description"
+              name="description"
+              type="text"
+              placeholder="Nuova spesa"
+              required
+            />
+          </div>
+
+          <div class="field">
+            <label for="expense-amount">Costo (€)</label>
+            <input
+              id="expense-amount"
+              name="amount"
+              type="number"
+              min="0.01"
+              step="0.01"
+              inputmode="decimal"
+              placeholder="0.00"
+              required
+            />
+          </div>
+
+          <button type="submit">Aggiungi spesa</button>
+        </form>
       </section>
 
       <hr />
@@ -79,7 +112,7 @@
       <section class="todo">
         <h2>Cose da fare</h2>
 
-        <ul>
+        <ul id="todo-list">
           <li>
             Visitare la Tower of London
             <span role="img" aria-label="Non fatto">&cross;</span>
@@ -97,6 +130,21 @@
             <span role="img" aria-label="Non fatto">&cross;</span>
           </li>
         </ul>
+
+        <form class="inline-form" id="todo-form">
+          <div class="field">
+            <label for="todo-label">Nuova attività</label>
+            <input
+              id="todo-label"
+              name="label"
+              type="text"
+              placeholder="Aggiungi una nuova attività"
+              required
+            />
+          </div>
+
+          <button type="submit">Aggiungi attività</button>
+        </form>
       </section>
 
       <hr />
@@ -146,14 +194,41 @@
       <section class="trip-photos">
         <h2>Le foto</h2>
 
-        <img
-          src="https://www.abta.com/sites/default/files/styles/large/public/media/uploads/london-400x400-compressor_0.jpg"
-          alt="Vista del Millennium Bridge a Londra"
-        />
-        <img
-          src="https://imgc.allpostersimages.com/img/posters/evening-tower-bridge-and-river-thames-london_u-L-P2QVZJ0.jpg?artPerspective=n"
-          alt="Tower Bridge illuminato sul Tamigi"
-        />
+        <form class="inline-form" id="photo-form">
+          <div class="field">
+            <label for="photo-url">URL immagine</label>
+            <input
+              id="photo-url"
+              name="src"
+              type="url"
+              placeholder="https://example.com/foto.jpg"
+              required
+            />
+          </div>
+
+          <div class="field">
+            <label for="photo-alt">Descrizione foto</label>
+            <input
+              id="photo-alt"
+              name="alt"
+              type="text"
+              placeholder="Descrizione opzionale"
+            />
+          </div>
+
+          <button type="submit">Aggiungi foto</button>
+        </form>
+
+        <div class="trip-photos__list" id="trip-photos-list">
+          <img
+            src="https://www.abta.com/sites/default/files/styles/large/public/media/uploads/london-400x400-compressor_0.jpg"
+            alt="Vista del Millennium Bridge a Londra"
+          />
+          <img
+            src="https://imgc.allpostersimages.com/img/posters/evening-tower-bridge-and-river-thames-london_u-L-P2QVZJ0.jpg?artPerspective=n"
+            alt="Tower Bridge illuminato sul Tamigi"
+          />
+        </div>
       </section>
     </main>
   </body>
