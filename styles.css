@@ -30,7 +30,7 @@
   --hero-overlay-end: rgba(2, 6, 23, 0.62);
   --radius: 1.25rem;
   --radius-sm: 0.875rem;
-  --content-width: min(72rem, calc(100vw - 2rem));
+  --content-width: min(58.4rem, calc(100vw - 2rem));
   --section-gap: clamp(1.5rem, 4vw, 3rem);
   --font: system-ui, sans-serif;
   --display-font:
