@@ -1,31 +1,24 @@
 :root {
-  --page-bg: #eef4ff;
-  --surface: rgba(255, 255, 255, 0.9);
-  --surface-strong: #ffffff;
-  --text: #0f172a;
-  --text-soft: #475569;
+  --background: #eef4ff;
+  --section: rgba(255, 255, 255, 0.9);
+  --card: #ffffff;
+  --foreground: #0f172a;
+  --muted-foreground: #475569;
   --accent: #0891b2;
-  --accent-strong: #0f172a;
   --border: rgba(15, 23, 42, 0.08);
   --border-strong: rgba(15, 23, 42, 0.18);
   --shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
   --transparent: transparent;
-  --surface-accent: rgba(8, 145, 178, 0.08);
-  --accent-focus-border: rgba(6, 182, 212, 0.55);
-  --accent-focus-ring: rgba(34, 211, 238, 0.18);
-  --accent-outline: rgba(6, 182, 212, 0.35);
-  --button-text: #ffffff;
-  --button-bg: #020617;
-  --button-bg-hover: #111827;
-  --button-shadow: 0 12px 24px rgba(2, 6, 23, 0.16);
-  --button-shadow-hover: 0 16px 30px rgba(2, 6, 23, 0.2);
-  --checkbox-dot: #ffffff;
-  --remove-border: rgba(14, 116, 144, 0.18);
-  --hero-text: #f8fafc;
-  --hero-text-shadow: 0 10px 30px rgba(2, 6, 23, 0.38);
-  --hero-overlay-start: rgba(8, 47, 73, 0.18);
-  --hero-overlay-mid: rgba(15, 23, 42, 0.14);
-  --hero-overlay-end: rgba(2, 6, 23, 0.62);
+  --secondary: rgba(8, 145, 178, 0.08);
+  --ring: rgba(6, 182, 212, 0.55);
+  --ring-shadow: rgba(34, 211, 238, 0.18);
+  --ring-offset: rgba(6, 182, 212, 0.35);
+  --primary: #020617;
+  --primary-foreground: #ffffff;
+  --primary-hover: #111827;
+  --primary-shadow: 0 12px 24px rgba(2, 6, 23, 0.16);
+  --primary-shadow-hover: 0 16px 30px rgba(2, 6, 23, 0.2);
+  --accent-border: rgba(14, 116, 144, 0.18);
   --radius: 1.25rem;
   --radius-sm: 0.875rem;
   --content-width: min(58.4rem, calc(100vw - 2rem));
@@ -50,8 +43,8 @@ body {
   min-height: 100vh;
   position: relative;
   font-family: var(--font);
-  color: var(--text);
-  background: var(--page-bg);
+  color: var(--foreground);
+  background: var(--background);
   line-height: 1.6;
 }
 
@@ -106,7 +99,7 @@ main {
 
 main > section {
   padding: clamp(1.25rem, 3vw, 2rem);
-  background: var(--surface);
+  background: var(--section);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -168,7 +161,7 @@ table {
   border-collapse: collapse;
   overflow: hidden;
   border-radius: var(--radius-sm);
-  background: var(--surface-strong);
+  background: var(--card);
 }
 
 .table-scroll {
@@ -181,7 +174,7 @@ table {
 }
 
 thead {
-  background: var(--surface-accent);
+  background: var(--secondary);
 }
 
 th,
@@ -219,8 +212,8 @@ tbody tr:last-child td {
   padding: 0;
   border-radius: 999px;
   background: var(--transparent);
-  color: var(--accent-strong);
-  border: 1px solid var(--remove-border);
+  color: var(--foreground);
+  border: 1px solid var(--accent-border);
   box-shadow: none;
   line-height: 1;
 }
@@ -228,7 +221,7 @@ tbody tr:last-child td {
 .expenses__remove:hover,
 .expenses__remove:focus-visible {
   box-shadow: none;
-  background: var(--surface-accent);
+  background: var(--secondary);
 }
 
 .inline-form {
@@ -250,7 +243,7 @@ tbody tr:last-child td {
 
 label {
   font-size: 0.95rem;
-  color: var(--text-soft);
+  color: var(--muted-foreground);
 }
 
 input {
@@ -259,8 +252,8 @@ input {
   padding: 0.8rem 0.95rem;
   border: 1px solid var(--border);
   border-radius: 999px;
-  background: var(--surface-strong);
-  color: var(--text);
+  background: var(--card);
+  color: var(--foreground);
   transition:
     border-color 140ms ease,
     box-shadow 140ms ease,
@@ -269,7 +262,7 @@ input {
 }
 
 input::placeholder {
-  color: var(--text-soft);
+  color: var(--muted-foreground);
 }
 
 input:hover {
@@ -278,8 +271,8 @@ input:hover {
 
 input:focus {
   outline: 0;
-  border-color: var(--accent-focus-border);
-  box-shadow: 0 0 0 4px var(--accent-focus-ring);
+  border-color: var(--ring);
+  box-shadow: 0 0 0 4px var(--ring-shadow);
 }
 
 button {
@@ -287,9 +280,9 @@ button {
   padding: 0.8rem 1.2rem;
   border: 0;
   border-radius: 999px;
-  color: var(--button-text);
-  background: var(--button-bg);
-  box-shadow: var(--button-shadow);
+  color: var(--primary-foreground);
+  background: var(--primary);
+  box-shadow: var(--primary-shadow);
   transition:
     transform 160ms ease,
     box-shadow 160ms ease,
@@ -300,13 +293,13 @@ button {
 button:hover,
 button:focus-visible {
   transform: translateY(-1px);
-  box-shadow: var(--button-shadow-hover);
-  background: var(--button-bg-hover);
+  box-shadow: var(--primary-shadow-hover);
+  background: var(--primary-hover);
   filter: saturate(1.03);
 }
 
 button:focus-visible {
-  outline: 2px solid var(--accent-outline);
+  outline: 2px solid var(--ring-offset);
   outline-offset: 2px;
 }
 
@@ -330,7 +323,7 @@ button:focus-visible {
   justify-content: space-between;
   gap: 1rem;
   padding: 0.95rem 1rem;
-  background: var(--surface-strong);
+  background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
 }
@@ -347,7 +340,7 @@ button:focus-visible {
 }
 
 .todo-item.is-complete .todo-item__label {
-  color: var(--text-soft);
+  color: var(--muted-foreground);
   text-decoration: line-through;
 }
 
@@ -375,7 +368,7 @@ button:focus-visible {
   width: 0.38rem;
   height: 0.38rem;
   border-radius: 50%;
-  background: var(--checkbox-dot);
+  background: var(--card);
   transform: scale(0);
   transition: transform 140ms ease;
 }
@@ -388,15 +381,15 @@ button:focus-visible {
   min-height: auto;
   padding: 0.55rem 0.8rem;
   background: var(--transparent);
-  color: var(--text);
-  border: 1px solid var(--remove-border);
+  color: var(--foreground);
+  border: 1px solid var(--accent-border);
   box-shadow: none;
 }
 
 .todo-item__remove:hover,
 .todo-item__remove:focus-visible {
   box-shadow: none;
-  background: var(--surface-accent);
+  background: var(--secondary);
 }
 
 .info ol {
@@ -444,15 +437,15 @@ button:focus-visible {
   min-height: auto;
   padding: 0.55rem 0.8rem;
   background: var(--transparent);
-  color: var(--text);
-  border: 1px solid var(--remove-border);
+  color: var(--foreground);
+  border: 1px solid var(--accent-border);
   box-shadow: none;
 }
 
 .trip-photo-card__remove:hover,
 .trip-photo-card__remove:focus-visible {
   box-shadow: none;
-  background: var(--surface-accent);
+  background: var(--secondary);
 }
 
 @media (max-width: 540px) {
