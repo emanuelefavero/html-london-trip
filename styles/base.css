@@ -92,4 +92,9 @@ button {
     outline: 2px solid var(--ring-offset);
     outline-offset: 2px;
   }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: var(--primary-shadow);
+  }
 }

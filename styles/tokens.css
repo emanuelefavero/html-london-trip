@@ -19,6 +19,7 @@
   --primary-shadow: 0 12px 24px rgba(2, 6, 23, 0.16);
   --primary-shadow-hover: 0 16px 30px rgba(2, 6, 23, 0.2);
   --accent-border: rgba(14, 116, 144, 0.18);
+  --card-hover: rgb(248, 251, 252);
   --radius: 1.25rem;
   --radius-sm: 0.875rem;
   --content-width: min(58.4rem, calc(100vw - 2rem));

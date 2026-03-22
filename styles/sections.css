@@ -129,7 +129,17 @@
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
-  
+  user-select: none;
+  cursor: pointer;
+  transition: all 200ms ease;
+
+  &:hover {
+    background: var(--card-hover);
+  }
+
+  &:active {
+    scale: 0.98;
+  }
 
   &.is-complete .todo-item__label {
     color: var(--muted-foreground);
