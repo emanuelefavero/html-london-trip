@@ -84,7 +84,7 @@ main {
 }
 
 header {
-  padding: clamp(3rem, 8vw, 6rem) 0 2rem;
+  padding: clamp(2rem, 6vw, 3.5rem) 0 1rem;
 }
 
 h1,
@@ -97,7 +97,8 @@ h2 {
 }
 
 h1 {
-  font-size: clamp(2.8rem, 7vw, 3rem);
+  max-width: 12ch;
+  font-size: clamp(2.4rem, 5.6vw, 3rem);
 }
 
 h2 {
@@ -136,7 +137,7 @@ hr {
 
 .panorama {
   display: grid;
-  gap: 0.9rem;
+  gap: 0.6rem;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items: stretch;
   background: var(--transparent);
@@ -155,7 +156,20 @@ hr {
 }
 
 .panorama img {
-  min-height: clamp(14rem, 34vw, 23rem);
+  height: clamp(10.35rem, 23vw, 14.4rem);
+  min-height: 0;
+}
+
+.panorama img:nth-child(1) {
+  object-position: 30% 82%;
+}
+
+.panorama img:nth-child(2) {
+  object-position: center 76%;
+}
+
+.panorama img:nth-child(3) {
+  object-position: 62% 78%;
 }
 
 table {
@@ -457,53 +471,24 @@ button:focus-visible {
   }
 
   header {
-    position: absolute;
-    inset: auto 1.25rem auto;
-    top: 0;
-    z-index: 2;
-    width: auto;
-    margin: 0;
-    padding: clamp(2rem, 8vw, 3rem) 0 0;
-  }
-
-  h1 {
-    max-width: 12ch;
-    color: var(--hero-text);
-    text-shadow: var(--hero-text-shadow);
+    padding-inline: 1rem;
   }
 
   .panorama {
-    position: relative;
     grid-template-columns: 1fr;
-    height: 70vh;
-    min-height: 300px;
-    border-radius: 0;
-
-    /* Only show the last image */
-    img:not(:last-child) {
-      display: none;
-    }
+    gap: 0;
   }
 
-  .panorama::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      180deg,
-      var(--hero-overlay-start) 0%,
-      var(--hero-overlay-mid) 38%,
-      var(--hero-overlay-end) 100%
-    );
-    pointer-events: none;
+  .panorama img:not(:last-child) {
+    display: none;
   }
 
   .panorama img:last-child {
-    min-height: 50svh;
-    border-radius: 0;
+    height: clamp(14rem, 56vw, 20rem);
+    object-position: 62% 78%;
   }
 
-  main > section:not(.panorama) {
+  main > section {
     width: var(--content-width);
     margin-inline: auto;
   }
