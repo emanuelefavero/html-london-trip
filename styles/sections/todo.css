@@ -1,6 +1,6 @@
 section.todo {
   padding: clamp(1.25rem, 3vw, 2rem);
-  background: var(--section);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -26,15 +26,18 @@ section.todo {
     justify-content: space-between;
     gap: 1rem;
     padding: 0.95rem 1rem;
-    background: var(--card);
+    background: var(--bg);
     border: 1px solid var(--border);
     border-radius: var(--radius-sm);
     user-select: none;
     cursor: pointer;
-    transition: all 200ms ease;
+    transition:
+      border-color var(--transition),
+      box-shadow var(--transition);
 
     &:hover {
-      background: var(--card-hover);
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px var(--ring);
     }
 
     &:active {
@@ -42,7 +45,7 @@ section.todo {
     }
 
     &.is-complete .todo-item__label {
-      color: var(--muted-foreground);
+      color: var(--muted);
       text-decoration: line-through;
     }
 
@@ -86,13 +89,19 @@ section.todo {
     flex: 0 0 1.2rem;
     padding: 0;
     border-radius: 50%;
-    border: 1px solid var(--border-strong);
+    border: 1px solid var(--border);
+    background: transparent;
     display: grid;
     place-items: center;
+    transition:
+      background-color var(--transition),
+      border-color var(--transition),
+      box-shadow var(--transition);
 
     &:checked {
       background: var(--accent);
       border-color: var(--accent);
+      box-shadow: 0 0 6px var(--ring);
     }
 
     &::after {
@@ -100,9 +109,9 @@ section.todo {
       width: 0.38rem;
       height: 0.38rem;
       border-radius: 50%;
-      background: var(--card);
+      background: white;
       transform: scale(0);
-      transition: transform 140ms ease;
+      transition: transform var(--transition);
     }
 
     &:checked::after {
@@ -113,15 +122,17 @@ section.todo {
   .todo-item__remove {
     min-height: auto;
     padding: 0.55rem 0.8rem;
-    background: var(--transparent);
-    color: var(--foreground);
-    border: 1px solid var(--accent-border);
+    background: transparent;
+    color: var(--fg);
+    border: 1px solid var(--border);
     box-shadow: none;
 
     &:hover,
     &:focus-visible {
-      box-shadow: none;
-      background: var(--secondary);
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px var(--ring);
+      background: var(--accent-soft);
+      filter: none;
     }
 
     @media (max-width: 540px) {

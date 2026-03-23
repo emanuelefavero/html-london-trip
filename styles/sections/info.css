@@ -1,6 +1,6 @@
 section.info {
   padding: clamp(1.25rem, 3vw, 2rem);
-  background: var(--section);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);

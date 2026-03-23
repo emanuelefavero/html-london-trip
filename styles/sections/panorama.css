@@ -3,10 +3,6 @@ section.panorama {
   gap: 0.6rem;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items: stretch;
-  background: var(--transparent);
-  border: 0;
-  border-radius: var(--radius);
-  box-shadow: none;
   padding: 0;
 
   img {
@@ -14,7 +10,16 @@ section.panorama {
     height: clamp(10.35rem, 23vw, 14.4rem);
     min-height: 0;
     object-fit: cover;
-    border-radius: calc(var(--radius) - 0.2rem);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    transition:
+      transform var(--transition),
+      box-shadow var(--transition);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
   }
 
   img:nth-child(1) {

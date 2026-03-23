@@ -1,7 +1,7 @@
 section.gallery {
   display: grid;
   padding: clamp(1.25rem, 3vw, 2rem);
-  background: var(--section);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -23,7 +23,16 @@ section.gallery {
     min-height: 11rem;
     height: clamp(11rem, 24vw, 15rem);
     object-fit: cover;
-    border-radius: calc(var(--radius) - 0.2rem);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    transition:
+      transform var(--transition),
+      box-shadow var(--transition);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
   }
 
   .gallery__card {
@@ -36,15 +45,17 @@ section.gallery {
     justify-self: start;
     min-height: auto;
     padding: 0.55rem 0.8rem;
-    background: var(--transparent);
-    color: var(--foreground);
-    border: 1px solid var(--accent-border);
+    background: transparent;
+    color: var(--fg);
+    border: 1px solid var(--border);
     box-shadow: none;
 
     &:hover,
     &:focus-visible {
-      box-shadow: none;
-      background: var(--secondary);
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px var(--ring);
+      background: var(--accent-soft);
+      filter: none;
     }
   }
 

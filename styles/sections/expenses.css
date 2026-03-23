@@ -1,6 +1,6 @@
 section.expenses {
   padding: clamp(1.25rem, 3vw, 2rem);
-  background: var(--section);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -19,11 +19,10 @@ section.expenses {
     border-collapse: collapse;
     overflow: hidden;
     border-radius: var(--radius-sm);
-    background: var(--card);
   }
 
   thead {
-    background: var(--secondary);
+    background: var(--accent-soft);
   }
 
   th,
@@ -40,6 +39,14 @@ section.expenses {
   tfoot td {
     font-weight: 700;
     border-bottom: 0;
+  }
+
+  tbody tr {
+    transition: background-color var(--transition);
+
+    &:hover {
+      background: var(--accent-soft);
+    }
   }
 
   tbody tr:last-child td {
@@ -63,17 +70,19 @@ section.expenses {
     min-width: 2rem;
     min-height: auto;
     padding: 0;
-    border-radius: 999px;
+    border-radius: var(--radius-sm);
     line-height: 1;
-    background: var(--transparent);
-    color: var(--foreground);
-    border: 1px solid var(--accent-border);
+    background: transparent;
+    color: var(--fg);
+    border: 1px solid var(--border);
     box-shadow: none;
 
     &:hover,
     &:focus-visible {
-      box-shadow: none;
-      background: var(--secondary);
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px var(--ring);
+      background: var(--accent-soft);
+      filter: none;
     }
   }
 

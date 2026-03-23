@@ -1,4 +1,4 @@
-/* Reusable UI patterns shared by multiple sections. */
+/* Reusable UI patterns. */
 .inline-form {
   display: grid;
   gap: 1rem;
