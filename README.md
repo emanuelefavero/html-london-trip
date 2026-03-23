@@ -53,7 +53,7 @@ Recreate a provided webpage using only HTML, with focus on semantic structure, r
 ## Notes
 
 - I decided against using `footer`, as the final photo block is still part of the main page content, not closing or supplementary page information.
-- I chose not to use `figure` for the images because the default browser margins changed the layout and made it less faithful to the reference screenshot, as we cannot use CSS in this exercise.
+- I chose not to use `figure` for the panorama images because the default browser margins changed the layout and made it less faithful to the reference screenshot, as we cannot use CSS in this exercise. I opted for an `aria-label` to the parent `section` and removed the `alt` text from the `img` to prevent repetitive descriptions for screen readers, since those images are decorative.
 - Considered adding `id` attributes (e.g., for the total in the expenses table) to support potential future scripting, but omitted them to keep the markup minimal and aligned with the current project scope.
 - I decided against using `h3` for headings after "Le mie Spese", such as "Cose da fare" etc., because though those appear smaller, semantically they are not subsections of "Le mie Spese", but rather separate sections of the page. Using `h2` for all main sections maintains a clear and logical heading structure.
 
