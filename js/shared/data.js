@@ -2,7 +2,9 @@
  * @file Initial data for the app, used also as a fallback when no saved state is found in localStorage.
  */
 
-// Todo
+/**
+ * Default todo items used on first load and as a storage fallback.
+ */
 export const initialTodoItems = [
   {
     id: 'tower-of-london',
@@ -26,7 +28,9 @@ export const initialTodoItems = [
   },
 ]
 
-// Expenses
+/**
+ * Default expenses used on first load and as a storage fallback.
+ */
 export const initialExpenses = [
   {
     id: 'expense-1',
@@ -45,7 +49,9 @@ export const initialExpenses = [
   },
 ]
 
-// Photo Gallery
+/**
+ * Default photos used on first load and as a storage fallback.
+ */
 export const initialPhotos = [
   {
     id: 'millennium-bridge',

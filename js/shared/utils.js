@@ -1,9 +1,9 @@
 /**
- * @file Utility functions for the app.
+ * @file Shared utility functions for the app.
  */
 
 /**
- * Formats a number as a currency string in Euros, using Italian formatting conventions (e.g. "€1.000,00" for one thousand euros). It also handles both integer and decimal amounts, ensuring that integers are displayed without decimal places while decimals always show two digits.
+ * Formats a number as Euros using Italian locale rules.
  *
  * @param {number} amount
  * @returns {string}
@@ -18,7 +18,7 @@ export const formatEuro = (amount) => {
 }
 
 /**
- * Parses positive amounts from form input. Returns null for invalid values to simplify validation in event handlers.
+ * Parses a positive numeric amount from form input.
  *
  * @param {string} value
  * @returns {number|null}
@@ -30,7 +30,7 @@ export const parseAmount = (value) => {
 }
 
 /**
- * Generates ids for new state entries.
+ * Generates a stable id for newly created items.
  *
  * @returns {string}
  */
