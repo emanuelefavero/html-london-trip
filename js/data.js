@@ -1,3 +1,8 @@
+/**
+ * @file Initial data for the app, used also as a fallback when no saved state is found in localStorage.
+ */
+
+// Todo
 export const initialTodoItems = [
   {
     id: 'tower-of-london',
@@ -21,6 +26,7 @@ export const initialTodoItems = [
   },
 ]
 
+// Expenses
 export const initialExpenses = [
   {
     id: 'expense-1',
@@ -39,6 +45,7 @@ export const initialExpenses = [
   },
 ]
 
+// Photo Gallery
 export const initialPhotos = [
   {
     id: 'millennium-bridge',

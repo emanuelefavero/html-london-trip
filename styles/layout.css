@@ -1,3 +1,4 @@
+/* Page-level layout and shared section shell. */
 header {
   width: var(--content-width);
   margin-inline: auto;
@@ -29,7 +30,7 @@ main {
 .expenses,
 .todo,
 .info,
-.trip-photos {
+.photo-gallery {
   padding: clamp(1.25rem, 3vw, 2rem);
   background: var(--section);
   border: 1px solid var(--border);

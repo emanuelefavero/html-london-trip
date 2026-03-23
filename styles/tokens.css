@@ -1,4 +1,6 @@
+/* Shared design tokens. */
 :root {
+  /* Colors */
   --background: #eef4ff;
   --section: rgba(255, 255, 255, 0.9);
   --card: #ffffff;
@@ -20,10 +22,14 @@
   --primary-shadow-hover: 0 16px 30px rgba(2, 6, 23, 0.2);
   --accent-border: rgba(14, 116, 144, 0.18);
   --card-hover: rgb(248, 251, 252);
+
+  /* Layout */
   --radius: 1.25rem;
   --radius-sm: 0.875rem;
   --content-width: min(58.4rem, calc(100vw - 2rem));
   --section-gap: clamp(1.5rem, 4vw, 3rem);
+
+  /* Font */
   --font: system-ui, sans-serif;
   --display-font:
     'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', 'Baskerville', serif;

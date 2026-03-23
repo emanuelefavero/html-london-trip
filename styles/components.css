@@ -1,3 +1,4 @@
+/* Reusable UI patterns shared by multiple sections. */
 .inline-form {
   display: grid;
   gap: 1rem;
@@ -15,6 +16,7 @@
   gap: 0.45rem;
 }
 
+/* Shared secondary action buttons. */
 .expenses__remove,
 .todo-item__remove,
 .trip-photo-card__remove {
