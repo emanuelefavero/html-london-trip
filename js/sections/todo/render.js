@@ -31,7 +31,7 @@ export const renderTodoSection = (todoItems, listElement) => {
     checkbox.type = 'checkbox'
     checkbox.checked = item.completed
     checkbox.dataset.todoToggle = item.id
-    checkbox.setAttribute('aria-label', `Segna come completata: ${item.label}`)
+    checkbox.setAttribute('aria-label', `Cambia stato attività: ${item.label}`)
 
     label.className = 'todo-item__label'
     label.textContent = item.label

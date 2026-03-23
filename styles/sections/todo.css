@@ -83,39 +83,38 @@ section.todo {
 
   .todo-item__checkbox {
     appearance: none;
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 1.5rem;
+    height: 1.5rem;
     min-height: auto;
-    flex: 0 0 1.2rem;
+    flex: 0 0 1.5rem;
     padding: 0;
-    border-radius: 50%;
-    border: 1px solid var(--border);
-    background: transparent;
     display: grid;
     place-items: center;
+    border: 0;
+    background: transparent;
+    color: var(--muted);
+    font: inherit;
+    font-size: 1.3rem;
+    line-height: 1;
     transition:
-      background-color var(--transition),
-      border-color var(--transition),
+      color var(--transition),
       box-shadow var(--transition);
 
+    &::before {
+      content: '☐';
+    }
+
     &:checked {
-      background: var(--accent);
-      border-color: var(--accent);
-      box-shadow: 0 0 6px var(--ring);
+      color: var(--accent);
     }
 
-    &::after {
-      content: '';
-      width: 0.38rem;
-      height: 0.38rem;
-      border-radius: 50%;
-      background: white;
-      transform: scale(0);
-      transition: transform var(--transition);
+    &:checked::before {
+      content: '✔︎';
     }
 
-    &:checked::after {
-      transform: scale(1);
+    &:focus-visible {
+      box-shadow: 0 0 0 2px var(--ring);
+      border-radius: 0.35rem;
     }
   }
 
