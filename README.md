@@ -3,6 +3,8 @@
 Semantic HTML exercise for a Web Development course.
 
 > Note: See the [Notes](#notes) section in this README for some of the decisions I made while writing the HTML markup, and the reasoning behind them.
+>
+> Tip: Additional enhancements (CSS & JS) are available in the `feat/with-css-and-js` branch (documentation still in progress).
 
 ## Live Demo
 
