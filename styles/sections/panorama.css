@@ -1,0 +1,47 @@
+section.panorama {
+  display: grid;
+  gap: 0.6rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  background: var(--transparent);
+  border: 0;
+  border-radius: var(--radius);
+  box-shadow: none;
+  padding: 0;
+
+  img {
+    width: 100%;
+    height: clamp(10.35rem, 23vw, 14.4rem);
+    min-height: 0;
+    object-fit: cover;
+    border-radius: calc(var(--radius) - 0.2rem);
+  }
+
+  img:nth-child(1) {
+    object-position: 30% 82%;
+  }
+
+  img:nth-child(2) {
+    object-position: center 76%;
+  }
+
+  img:nth-child(3) {
+    object-position: 62% 78%;
+  }
+
+  @media (max-width: 540px) {
+    width: var(--content-width);
+    margin-inline: auto;
+    grid-template-columns: 1fr;
+    gap: 0;
+
+    img:not(:last-child) {
+      display: none;
+    }
+
+    img:last-child {
+      height: clamp(14rem, 56vw, 20rem);
+      object-position: 62% 78%;
+    }
+  }
+}

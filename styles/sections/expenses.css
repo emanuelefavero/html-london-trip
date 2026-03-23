@@ -1,0 +1,88 @@
+section.expenses {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background: var(--section);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+
+  .table-scroll {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: var(--radius-sm);
+    background: var(--card);
+  }
+
+  thead {
+    background: var(--secondary);
+  }
+
+  th,
+  td {
+    padding: 0.95rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+
+    @media (max-width: 400px) {
+      padding: 0.8rem 0.75rem;
+    }
+  }
+
+  tfoot td {
+    font-weight: 700;
+    border-bottom: 0;
+  }
+
+  tbody tr:last-child td {
+    border-bottom: 1px solid var(--border);
+  }
+
+  td:nth-child(3),
+  th:nth-child(3) {
+    text-align: right;
+  }
+
+  th:last-child,
+  .expenses__action-cell {
+    width: 1%;
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  .expenses__remove {
+    width: 2rem;
+    min-width: 2rem;
+    min-height: auto;
+    padding: 0;
+    border-radius: 999px;
+    line-height: 1;
+    background: var(--transparent);
+    color: var(--foreground);
+    border: 1px solid var(--accent-border);
+    box-shadow: none;
+
+    &:hover,
+    &:focus-visible {
+      box-shadow: none;
+      background: var(--secondary);
+    }
+  }
+
+  @media (max-width: 540px) {
+    width: var(--content-width);
+    margin-inline: auto;
+  }
+
+  @media (max-width: 400px) {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,32 @@
+section.info {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background: var(--section);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+
+  ol,
+  ul {
+    padding-left: 1.2rem;
+  }
+
+  ol {
+    display: grid;
+    gap: 1.2rem;
+  }
+
+  li > ul {
+    margin-top: 0.55rem;
+    display: grid;
+    gap: 0.3rem;
+  }
+
+  @media (max-width: 540px) {
+    width: var(--content-width);
+    margin-inline: auto;
+  }
+
+  @media (max-width: 400px) {
+    padding: 1rem;
+  }
+}

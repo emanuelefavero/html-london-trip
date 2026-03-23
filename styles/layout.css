@@ -1,4 +1,4 @@
-/* Page-level layout and shared section shell. */
+/* Page-level layout selectors only. */
 header {
   width: var(--content-width);
   margin-inline: auto;
@@ -23,27 +23,6 @@ main {
 
   > section {
     min-width: 0;
-  }
-}
-
-.panorama,
-.expenses,
-.todo,
-.info,
-.photo-gallery {
-  padding: clamp(1.25rem, 3vw, 2rem);
-  background: var(--section);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-
-  @media (max-width: 540px) {
-    width: var(--content-width);
-    margin-inline: auto;
-  }
-
-  @media (max-width: 400px) {
-    padding: 1rem;
   }
 }
 

@@ -120,12 +120,12 @@ export const renderPhotosSection = (photos, listElement) => {
     const image = document.createElement('img')
     const removeButton = document.createElement('button')
 
-    card.className = 'trip-photo-card'
+    card.className = 'gallery__card'
 
     image.src = photo.src
     image.alt = photo.alt
 
-    removeButton.className = 'trip-photo-card__remove'
+    removeButton.className = 'gallery__remove'
     removeButton.type = 'button'
     removeButton.dataset.photoRemove = photo.id
     removeButton.setAttribute('aria-label', `Rimuovi foto: ${photo.alt}`)

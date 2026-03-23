@@ -15,34 +15,3 @@
   display: grid;
   gap: 0.45rem;
 }
-
-/* Shared secondary action buttons. */
-.expenses__remove,
-.todo-item__remove,
-.trip-photo-card__remove {
-  min-height: auto;
-  padding: 0.55rem 0.8rem;
-  background: var(--transparent);
-  color: var(--foreground);
-  border: 1px solid var(--accent-border);
-  box-shadow: none;
-
-  &:hover,
-  &:focus-visible {
-    box-shadow: none;
-    background: var(--secondary);
-  }
-}
-
-.trip-photo-card {
-  display: grid;
-  gap: 0.75rem;
-  align-content: start;
-
-  img {
-    width: 100%;
-    min-height: 11rem;
-    height: clamp(11rem, 24vw, 15rem);
-    object-fit: cover;
-  }
-}
