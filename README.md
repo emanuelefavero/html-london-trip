@@ -1,70 +1,80 @@
 # HTML London Trip
 
-Semantic HTML exercise for a Web Development course.
+Originally built as a semantic HTML exercise for a Web Development course, this project now also includes a small vanilla JavaScript layer and a modular stylesheet system in the `feat/with-css-and-js` branch.
 
-> **Note:** See the [Notes](#notes) section for implementation decisions.
->
-> Additional CSS and JavaScript enhancements are available in the `feat/with-css-and-js` branch.
+## Documentation
+
+- [Project documentation](./docs/overview.md)
 
 ## Live Demo
 
 - [View the live webpage](https://emanuelefavero.github.io/html-london-trip/)
 
-## Goal
+## Project Context
 
-Recreate a provided webpage using only HTML, with focus on semantic structure, readable markup, and accessibility fundamentals.
+The original goal of the exercise was to recreate a provided webpage using only HTML, with focus on semantic structure, readable markup, and accessibility fundamentals.
 
-## Constraints
+That original HTML-only version is still the foundation of the project. This branch extends it with presentation and interactive behavior while keeping the stack intentionally simple:
+
+- semantic HTML in `index.html`
+- CSS organized through `styles.css` and the `styles/` folder
+- vanilla JavaScript modules in `js/`
+- no frameworks or external dependencies
+
+## Current Features In This Branch
+
+- responsive page styling built on CSS cascade layers
+- interactive expenses table with add and remove actions
+- interactive todo list with add, toggle, and remove actions
+- interactive photo gallery with add and remove actions
+- shared client-side state persisted in `localStorage`
+
+## Original Exercise Constraints
+
+These constraints describe the first version of the project:
 
 - HTML only
 - No CSS
 - No JavaScript
 - No frameworks or dependencies
 
-## Project Structure
+## Current Project Structure
 
 ```text
-├── .prettierrc
 ├── index.html
+├── styles.css
 ├── README.md
+├── docs/
+│   ├── overview.md
+│   ├── frontend-architecture.md
+│   └── styles-and-behavior.md
+├── styles/
+│   ├── tokens.css
+│   ├── base.css
+│   ├── layout.css
+│   ├── components.css
+│   └── sections/
+├── js/
+│   ├── app.js
+│   ├── shared/
+│   └── sections/
 ├── assets/
-│   ├── source-layout.jpg
-│   └── WEB-IMAGES.md
 └── img/
-    ├── pexels-bill-emrich-230794-0.jpg
-    ├── pexels-bill-emrich-230794-1.jpg
-    └── pexels-bill-emrich-230794-2.jpg
 ```
-
-- `index.html`: The main HTML file containing the webpage markup.
-- `README.md`: This file, providing an overview of the project, goals, constraints, and notes.
-- `assets/`: Contains the reference screenshot and a markdown file listing the web images used in the project.
-- `img/`: Contains the local images used in the webpage.
-
-> Note: I have also added a `.prettierrc` with my preferred formatting settings to ensure consistent indentation and readability in the `index.html` file.
 
 ## What This Project Shows
 
-- correct HTML document structure
-- use of semantic sections and headings
-- proper use of lists, tables, images, and text elements
-- simple accessible markup with logical reading order
+- a semantic HTML page can remain the source of structure even after styling and behavior are added
+- small browser-native JavaScript modules are enough for simple interactive features
+- CSS can stay maintainable by separating tokens, layout, reusable components, and section-specific rules
+- a small state model can coordinate multiple interactive sections without introducing libraries
 
 ## Notes
 
 - I decided against using `footer`, as the final photo block is still part of the main page content, not closing or supplementary page information.
-- I chose not to use `figure` for the panorama images because the default browser margins changed the layout and made it less faithful to the reference screenshot, as we cannot use CSS in this exercise. I opted for an `aria-label` to the parent `section` and removed the `alt` text from the `img` to prevent repetitive descriptions for screen readers, since those images are decorative.
-- Considered adding `id` attributes (e.g., for the total in the expenses table) to support potential future scripting, but omitted them to keep the markup minimal and aligned with the current project scope.
-- I decided against using `h3` for headings after "Le mie Spese", such as "Cose da fare" etc., because though those appear smaller, semantically they are not subsections of "Le mie Spese", but rather separate sections of the page. Using `h2` for all main sections maintains a clear and logical heading structure.
+- In the original HTML-only exercise, I chose not to use `figure` for the panorama images because default browser margins made the layout less faithful to the reference screenshot without CSS. The parent `section` therefore carries the accessible description while the panorama images are decorative.
+- I kept `h2` for the main sections because they are parallel sections of the page, not subsections of the expenses area.
 
 ## Reference Screenshot
 
 ![Source layout for the exercise](./assets/source-layout.jpg)
-
-&nbsp;
-
----
-
-&nbsp;
-
-[**Go To Top &nbsp; ⬆️**](#html-london-trip)
